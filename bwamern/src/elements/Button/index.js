@@ -25,6 +25,7 @@ export default function Button(props) {
                     <>
                         <span className="spinner-border spinner-border-sm mx-5"></span>
                         <span className="sr-only"></span>
+                        <span>loading</span>
                     </>
                 ) : (
                     props.children
@@ -79,6 +80,7 @@ Button.propTypes = {
     href: propTypes.string,
     target: propTypes.string,
     className: propTypes.string,
+    isExternal: propTypes.bool,
     isDisabled: propTypes.bool,
     isLoading: propTypes.bool,
     isSmall: propTypes.bool,
