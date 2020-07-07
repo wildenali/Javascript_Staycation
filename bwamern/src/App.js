@@ -1,6 +1,6 @@
 import React from 'react';
 
-import "assets/scss.style.scss"
+import "assets/scss/style.scss"
 
 function App() {
   return (
