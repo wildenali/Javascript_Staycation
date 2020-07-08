@@ -35,7 +35,7 @@ export default function Button(props) {
     }
 
     
-    if (props.type == "link") {
+    if (props.type === "link") {
         if (props.isExternal) {
             return(
                 <a 
