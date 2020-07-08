@@ -144,6 +144,7 @@ section {
     &.card-featured {
         overflow: hidden;
         cursor: pointer;
+        border-radius: 15px;
         height: 100%;
         &:after {
             position: absolute;
@@ -155,7 +156,7 @@ section {
             transform: scale(1.1);
             transition: .5s transform ease-in-out;
             z-index: 2;
-            @include gradient-y(rgba($black, 0), rgba($black, .51), 0%, 100%)
+            @include gradient-y(rgba($black, 0), rgba($black, .51), 20%, 100%)
         }
 
         .img-wrapper {
@@ -180,6 +181,22 @@ section {
             bottom: 0;
             width: 100%;
             transform: translateY(0);
+            transition: .3s transform ease-in-out;
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+        }
+
+        &:hover {
+            .meta-wrapper {
+                transform: translateY(-10px);
+            }
+            &:after {
+                transform: scale(1);
+            }
+            .img-wrapper {
+                transform: scale(1);
+            }
         }
 
     }
