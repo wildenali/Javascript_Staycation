@@ -8,7 +8,8 @@ import "react-date-range/dist/style.css";
 import "react-date-range/dist/theme/default.css";
 
 import formatDate from 'utils/formatNumber';
-import moduleName from 'assets/images/ic_calendar.svg';
+// import iconCalendar from 'assets/images/ic_calendar.svg';
+import iconCalendar from 'assets/images/icons/icon-calendar.svg';
 
 
 export default function Date(props) {
