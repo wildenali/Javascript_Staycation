@@ -7,6 +7,7 @@ import "./index.scss";
 
 
 export default function Breadcrumb(props) {
+    const className = ["breadcrumb", props.className];
     return (
         <nav aria-label="breadcrumb">
             <ol className={className.join(" ")}>
@@ -27,7 +28,7 @@ export default function Breadcrumb(props) {
     );
 }
 
-Breadcrumb.prototype = {
+Breadcrumb.propTypes = {
     data: propTypes.array,
     className: propTypes.string
 };
