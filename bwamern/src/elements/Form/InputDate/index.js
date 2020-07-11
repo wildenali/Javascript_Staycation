@@ -7,7 +7,7 @@ import "./index.scss";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 
-import formatDate from 'utils/formatNumber';
+import formatDate from 'utils/formatDate';
 import iconCalendar from 'assets/images/icons/icon-calendar.svg';
 
 
@@ -16,15 +16,15 @@ export default function Date(props) {
     const { value, placeholder, name } = props;
     const [isShowed, setIsShowed] = useState(false);
 
-    const datePickerChange = value => {
+    const datePickerChange = (value) => {
         const target = {
             target: {
                 value: value.selection,
-                name: name
-            }
+                name: name,
+            },
         };
         props.onChange(target);
-    };
+      };
 
     useEffect(() => {
         document.addEventListener("mousedown", handleClickOutside);
@@ -35,17 +35,19 @@ export default function Date(props) {
     });
 
     const refDate = useRef(null);
-    const handleClickOutside = event => {
+    const handleClickOutside = (event) => {
         if (refDate && !refDate.current.contains(event.target)) {
             setIsShowed(false);
         }
     };
 
-    const check = focus => {
+    const check = (focus) => {
         focus.indexOf(1) < 0 && setIsShowed(false);
     };
 
-    const displayDate = `${value.startDate ? formatDate(value.startDate) : ""}${value.endDate ? " - " + formatDate(value.endDate) : ""}`;
+    const displayDate = `${value.startDate ? formatDate(value.startDate) : ""}${
+        value.endDate ? " - " + formatDate(value.endDate) : ""
+      }`;
 
     return (
         <div
@@ -66,12 +68,13 @@ export default function Date(props) {
                     placeholder={placeholder}
                     onClick={() => setIsShowed(!isShowed)}
                 />
+
                 {isShowed && (
                     <div className="date-range-wrapper">
                         <DateRange
-                            editableDataInputs={true}
+                            editableDateInputs={true}
                             onChange={datePickerChange}
-                            moveRangeOfFirstSection={false}
+                            moveRangeOnFirstSelection={false}
                             onRangeFocusChange={check}
                             ranges={[value]}
                         />
