@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import InputNumber from 'elements/Form/InputNumber';
-import InputDate from 'elements/Form/InputDate';
+
+// import InputNumber from 'elements/Form/InputNumber';
+// import InputDate from 'elements/Form/InputDate';
+import { InputDate, InputNumber } from 'elements/Form/index'
 
 
 export default class Example extends Component {
