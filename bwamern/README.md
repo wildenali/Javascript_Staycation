@@ -74,3 +74,11 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 `npm i react-date-range`
 untuk contoh date bisa di lihat di: http://adphorus.github.io/react-date-range/
+
+
+- https://class.buildwithangga.com/course_playing/full-stack-javascript-developer/148
+
+`npm i date-fns`
+ini untuk melengkapi react-date-range
+
+- pelajari Intl.DateTimeFormat
