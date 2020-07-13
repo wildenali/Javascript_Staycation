@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
-import propTypes from 'prop-types';
-import { InputNumber, InputDate } from 'elements/Form'
-import Button from 'elements/Button';
+import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 
-export default class BookingForm extends Component {
+import propTypes from "prop-types";
+
+import Button from "elements/Button";
+import { InputNumber, InputDate } from "elements/Form";
+
+class BookingForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,7 +15,7 @@ export default class BookingForm extends Component {
                 date: {
                     startDate: new Date(),
                     endDate: new Date(),
-                    key: "selection"
+                    key: "selection",
                 }
             }
         };
@@ -23,7 +26,7 @@ export default class BookingForm extends Component {
             ...this.state,
             data: {
                 ...this.state.data,
-                [e.target.name]: e.target.value
+                [e.target.name]: e.target.value,
             }
         });
     };
@@ -39,21 +42,21 @@ export default class BookingForm extends Component {
                 data: {
                     ...this.state.data,
                     duration: countDuration
-                }
+                },
             });
         }
 
         if (prevState.data.duration !== data.duration) {
             const startDate = new Date(data.date.startDate);
-            const endDate = new Date(startDate.setDate(startDate.getDate() + +data.duration -1));   // +data.duration ini adalah representasi kan sebaai numerik, shortcut nya convert ke numeric
+            const endDate = new Date(startDate.setDate(startDate.getDate() + +data.duration - 1));   // +data.duration ini adalah representasi kan sebaai numerik, shortcut nya convert ke numeric
             
             this.setState({
                 ...this.state,
                 data: {
                     ...this.state.data,
-                    data: {
-                        ...this.state.data,
-                        endDate: endDate
+                    date: {
+                        ...this.state.data.date,
+                        endDate: endDate,
                     }
                 }
             });
@@ -118,4 +121,6 @@ export default class BookingForm extends Component {
 BookingForm.propTypes = {
     itemDetails: propTypes.object,
     startBooking: propTypes.func
-}
+};
+
+export default withRouter(BookingForm);
