@@ -81,4 +81,10 @@ untuk contoh date bisa di lihat di: http://adphorus.github.io/react-date-range/
 `npm i date-fns`
 ini untuk melengkapi react-date-range
 
+
 - pelajari Intl.DateTimeFormat
+
+
+- https://class.buildwithangga.com/course_playing/full-stack-javascript-developer/161
+
+`npm i react-html-parser`
