@@ -29,7 +29,7 @@ export default class DetailsPage extends Component {
                 <FeaturedImage data={ItemDetails.imageUrls}></FeaturedImage>
                 <section className="container">
                     <div className="row">
-                        <div className="col-7 pr-5">
+                        <div className="col-7 pr-5 text-justify">
                             <PageDetailDescription data={ItemDetails}></PageDetailDescription>
                         </div>
                         <div className="col-5">Booking Form</div>
