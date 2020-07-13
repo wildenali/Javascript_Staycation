@@ -4,7 +4,8 @@ import Fade from "react-reveal/Fade";
 import { InputText, InputFile } from "elements/Form";
 
 import logoBca from "assets/images/logo-bca.jpg";
-import logoMandiri from "assets/images/logo-mandiri.jpg";
+// import logoMandiri from "assets/images/logo-mandiri.jpg";
+import logoBNI from "assets/images/logo-bni.jpg";
 
 export default function Payment(props) {
     const { data, ItemDetails, checkout } = props;
@@ -30,21 +31,21 @@ export default function Payment(props) {
                                 <div className="col">
                                     <dl>
                                         <dd>Bank Central Asia</dd>
-                                        <dd>2208 1996</dd>
-                                        <dd>BuildWith Angga</dd>
+                                        <dd>593 0339 409</dd>
+                                        <dd>Wilden Ali</dd>
                                     </dl>
                                 </div>
                             </div>
             
                             <div className="row">
                                 <div className="col-3 text-right">
-                                    <img src={logoMandiri} alt="mandiri" width="60" />
+                                    <img src={logoBNI} alt="bni" width="60" />
                                 </div>
                                 <div className="col">
                                     <dl>
-                                        <dd>Bank Mandiri</dd>
-                                        <dd>2208 1996</dd>
-                                        <dd>BuildWith Angga</dd>
+                                        <dd>Bank Negara Indonesia</dd>
+                                        <dd>090 5624 818</dd>
+                                        <dd>Wilden Ali</dd>
                                     </dl>
                                 </div>
                             </div>
