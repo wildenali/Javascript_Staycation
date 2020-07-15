@@ -88,3 +88,8 @@ ini untuk melengkapi react-date-range
 - https://class.buildwithangga.com/course_playing/full-stack-javascript-developer/161
 
 `npm i react-html-parser`
+
+
+- https://class.buildwithangga.com/course_playing/full-stack-javascript-developer/184
+`npm i react-redux`
+`npm i axios`
