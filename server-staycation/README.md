@@ -1,5 +1,8 @@
 # Backend Staycation
 
+## How to Run the Server
+`npm start`
+
 ## 1. Install Mongoose
 
 `npm install mongoose`
