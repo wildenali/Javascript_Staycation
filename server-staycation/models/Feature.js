@@ -9,9 +9,9 @@ const featureSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    imageId: {
+    imageUrl: {
         type: String,
-        ref: 'Image'
+        required: true
     }
 })
 
