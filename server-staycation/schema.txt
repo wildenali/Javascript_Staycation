@@ -41,7 +41,8 @@ booking : {
     }],
     numberId : [{ _id : ObjectId }],
     bankId : [{ _id : ObjectId }],
-    bankForm : String,
+    proofPayment: String,
+    bankFrom : String,
     accountHolder : String,
     imageUrl : String,
     status : String
