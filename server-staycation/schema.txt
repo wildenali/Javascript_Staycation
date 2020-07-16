@@ -1,33 +1,33 @@
 category : {
-    name : string
+    name : String
 }
 
 image : {
-    imageUrl : string
+    imageUrl : String
 }
 
 item : {
-    title : string,
+    title : String,
     price : number.,
-    country : string,
-    city : string,
+    country : String,
+    city : String,
     isPopular : boolean,
-    description : string,
+    description : String,
     imageId : [{_id : ObjectId}],
     featureId : [{_id : ObjectId}],
     activityId : [{_id : ObjectId}],
 }
 
 feature : {
-    name : string,
+    name : String,
     qty : number,
-    imageUrl : string
+    imageUrl : String
 }
 
 activity : {
-    name : string,
-    type : string,
-    imageUrl : string,
+    name : String,
+    type : String,
+    imageUrl : String,
     isPopular : boolean
 }
 
@@ -41,21 +41,21 @@ booking : {
     }],
     numberId : [{ _id : ObjectId }],
     bankId : [{ _id : ObjectId }],
-    bankForm : string,
-    accountHolder : string,
-    imageUrl : string,
-    status : string
+    bankForm : String,
+    accountHolder : String,
+    imageUrl : String,
+    status : String
 }
 
 member : {
-    firstName : string,
-    lastName : string,
-    email : string,
-    phoneNumber : string
+    firstName : String,
+    lastName : String,
+    email : String,
+    phoneNumber : String
 }
 
 bank : {
-    nameBank : string,
-    nomorRekening : string,
-    name : string
+    nameBank : String,
+    nomorRekening : String,
+    name : String
 }
