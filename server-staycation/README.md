@@ -25,5 +25,14 @@ Kalau udah cek di package.json
 
 
 ## 3. Install Method Override
+
 untuk menggunakan method PUT. perlu install method-override
+
 `$ npm install method-override`
+
+
+## 4. Install Connect Flash dan Express Session
+
+`$ npm install connect-flash`
+
+`$ npm install express-session`
