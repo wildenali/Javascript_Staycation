@@ -24,3 +24,6 @@ install via npm
 Kalau udah cek di package.json
 
 
+## 3. Install Method Override
+untuk menggunakan method PUT. perlu install method-override
+`$ npm install method-override`
