@@ -6,8 +6,11 @@ module.exports = {
         res.render('admin/dashboard/view_dashboard');
     },
     
-    viewCategory: (req, res) => {
-        res.render('admin/category/view_category');
+    viewCategory: async(req, res) => {
+        // Cara tampilin data yg ada di database
+        const category = await Category.find();
+        console.log(category);
+        res.render('admin/category/view_category', { category });
     },
     
     addCategory: async (req, res) => {
