@@ -70,8 +70,11 @@
     </div>
   </div>
 
-  <!-- add Button -->
+  <!-- add Modal Button -->
   <%- include('add_modal.ejs') %>
+
+  <!-- edit Modal Button -->
+  <%- include('edit_modal.ejs') %>
 
   <!-- JavaScript file -->
   <!-- Bootstrap core JavaScript-->
@@ -79,6 +82,19 @@
   <!-- Custom scripts for all pages-->
   <%- include('../../partials/js.ejs') %>
   <!-- End of JavaScript file -->
+
+  <script>
+    $('#dataTable').on('click', '.button-update', function() {
+      let id = $(this).data('id');
+      let name = $(this).data('name');
+      console.log(id + name);
+      $('#edit-modal').modal('show');
+
+      // Kirim Datanya
+      $('.id').val(id);
+      $('.name').val(name);
+    })
+  </script>
 
 </body>
 
