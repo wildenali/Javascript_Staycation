@@ -6,6 +6,10 @@ var logger = require('morgan');
 
 // method override
 const methodOverride = require('method-override');
+// import session
+const session = require('express-session');
+// import flash
+const flash = require('connect-flash');
 
 // import mongoose
 const mongoose = require('mongoose');
@@ -30,6 +34,15 @@ app.set('view engine', 'ejs');
 
 // method override
 app.use(methodOverride('_method'));
+// cara pakai express-session
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60000 }
+}));
+// cara pakai connect-session
+app.use(flash());
 
 app.use(logger('dev'));
 app.use(express.json());
