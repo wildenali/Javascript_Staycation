@@ -4,6 +4,9 @@
 `npm start`
 refernce ke http://www.mongoosejs.com/docs/guide.html
 
+Pakai nodemon
+`npm run dev`
+
 
 ## 1. Install Mongoose
 
