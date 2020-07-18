@@ -36,3 +36,8 @@ untuk menggunakan method PUT. perlu install method-override
 `$ npm install connect-flash`
 
 `$ npm install express-session`
+
+
+## 5. Install multer dan fs-extra
+
+`$ npm install multer fs-extra`
