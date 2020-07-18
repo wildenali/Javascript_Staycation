@@ -78,12 +78,33 @@
   <!-- Import add_modal.ejs -->
   <%- include('add_modal.ejs') %>
 
+  <!-- Import edit_modal.ejs -->
+  <%- include('edit_modal.ejs') %>
+
   <!-- JavaScript file -->
   <!-- Bootstrap core JavaScript-->
   <!-- Core plugin JavaScript-->
   <!-- Custom scripts for all pages-->
   <%- include('../../partials/js.ejs') %>
   <!-- End of JavaScript file -->
+
+  <script>
+    $('#dataTable').on('click', '.button-update', function() {
+      let id = $(this).data('id');
+      let name = $(this).data('name');
+      let nameBank = $(this).data('namebank');
+      let nomorRekening = $(this).data('nomorrekening');
+      // console.log(id + name);
+      
+      // Kirim Datanya
+      $('#edit-modal').modal('show');
+      $('.id').val(id);
+      $('.name').val(name);
+      $('.nameBank').val(nameBank);
+      $('.nomorRekening').val(nomorRekening);
+      // $('.nomorRekening').val(nomorRekening);
+    })
+  </script>
 
 </body>
 
