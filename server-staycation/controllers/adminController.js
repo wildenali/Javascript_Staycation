@@ -79,14 +79,16 @@ module.exports = {
         }
     },
 
-    viewBank: (req, res) => {
+    viewBank: async (req, res) => {
         try {
+            const bank = await Bank.find();
             const alertMessage = req.flash('alertMessage');
             const alertStatus = req.flash('alertStatus');
             const alert = { message: alertMessage, status: alertStatus };
             res.render('admin/bank/view_bank', {
                 title: "Staycation | Bank",
-                alert
+                alert,
+                bank
             });
         } catch (error) {
             req.flash('alertMessage', `${error.message}`);
@@ -95,7 +97,7 @@ module.exports = {
         }
     },
     
-    addBank: async(req, res) => {
+    addBank: async (req, res) => {
         try {
             const { name, nameBank, nomorRekening } = req.body;
             // console.log(req.file);  
