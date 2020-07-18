@@ -24,6 +24,10 @@ const itemSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    categoryId: {   // Merelasikan dengan category dengan item
+        type: ObjectId,
+        ref: 'Category'
+    },
     imageId: [{
         type: ObjectId,
         ref: 'Image'
