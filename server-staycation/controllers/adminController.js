@@ -2,6 +2,8 @@ const Category = require('../models/Category');
 const Bank = require('../models/Bank');
 const Item = require('../models/Item');
 const Image = require('../models/Image');
+const Feature = require('../models/Feature');
+const Activity = require('../models/Activity');
 const fs = require('fs-extra');
 const path = require('path');
 
@@ -336,6 +338,30 @@ module.exports = {
             req.flash('alertMessage', `${error.message}`);
             req.flash('alertStatus', 'danger');
             res.redirect('/admin/item');
+        }
+    },
+
+    viewDetailItem: async (req, res) => {
+        const { itemId } = req.params;
+        try {
+            const alertMessage = req.flash('alertMessage');
+            const alertStatus = req.flash('alertStatus');
+            const alert = { message: alertMessage, status: alertStatus };
+        
+            const feature = await Feature.find({ itemId: itemId });
+            const activity = await Activity.find({ itemId: itemId });
+        
+            res.render('admin/item/detail_item/view_detail_item', {
+                title: 'Staycation | Detail Item',
+                alert,
+                itemId,
+                feature,
+                activity,
+            });
+        } catch (error) {
+            req.flash('alertMessage', `${error.message}`);
+            req.flash('alertStatus', 'danger');
+            res.redirect(`/admin/item/show-detail-item/${itemId}`);
         }
     },
 
