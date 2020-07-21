@@ -323,9 +323,9 @@ module.exports = {
                 fs.unlink(path.join(`public/${image.imageUrl}`));
                 image.remove();
                 }).catch((error) => {
-                req.flash('alertMessage', `${error.message}`);
-                req.flash('alertStatus', 'danger');
-                res.redirect('/admin/item');
+                    req.flash('alertMessage', `${error.message}`);
+                    req.flash('alertStatus', 'danger');
+                    res.redirect('/admin/item');
                 });
             }
             await item.remove();
