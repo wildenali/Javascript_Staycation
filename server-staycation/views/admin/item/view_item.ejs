@@ -3,9 +3,7 @@
 <!-- Page Wrapper -->
 <div id="wrapper">
 
-  <!-- Sidebar -->
   <%- include('../../partials/sidebar.ejs') %>
-  <!-- End of Sidebar -->
 
   <!-- Content Wrapper -->
   <div id="content-wrapper" class="d-flex flex-column">
@@ -13,61 +11,56 @@
     <!-- Main Content -->
     <div id="content">
 
-      <!-- Topbar -->
       <%- include('../../partials/navbar.ejs') %>
-      <!-- End of Topbar -->
 
       <!-- Begin Page Content -->
       <div class="container-fluid">
-
         <%- include('../../partials/message.ejs') %>
 
         <!-- Page Heading -->
         <h1 class="h3 mb-4 text-gray-800">Item</h1>
-        <!-- End Page Heading -->
+        <!-- End Heading -->
 
         <% if(action == 'view') { %>
-          <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#show-item" role="tab" aria-controls="home"
-                aria-selected="true">Show Item</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#add-item" role="tab" aria-controls="profile"
-                aria-selected="false">Add Item</a>
-            </li>
-  
-          </ul>
-          <div class="tab-content" id="myTabContent">
-            <%- include('show_table_item.ejs') %>
-            <%- include('add_item.ejs') %>
-          </div>
-  
-          <% } else if(action == 'show image') { %>
-          <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#show-image" role="tab"
-                aria-controls="home" aria-selected="true">Show Image</a>
-            </li>
-  
-          </ul>
-          <div class="tab-content" id="myTabContent">
-            <%- include('show_image_item.ejs') %>
-          </div>
-          <% }else{%>
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#edit-item" role="tab" aria-controls="home"
-                  aria-selected="true">Edit Item</a>
-              </li>
-    
-            </ul>
-            <div class="tab-content" id="myTabContent">
-              <%- include('edit_item.ejs') %>
-            </div>
-          <% } %>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#show-item" role="tab" aria-controls="home"
+              aria-selected="true">Show Item</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#add-item" role="tab" aria-controls="profile"
+              aria-selected="false">Add Item</a>
+          </li>
 
-        
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <%- include('show_table_item.ejs') %>
+          <%- include('add_item.ejs') %>
+        </div>
+
+        <% } else if(action == 'show image') { %>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#show-image" role="tab"
+              aria-controls="home" aria-selected="true">Show Image</a>
+          </li>
+
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <%- include('show_image_item.ejs') %>
+        </div>
+        <% }else{%>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#edit-item" role="tab" aria-controls="home"
+              aria-selected="true">Edit Item</a>
+          </li>
+
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <%- include('edit_item.ejs') %>
+        </div>
+        <% } %>
 
 
       </div>
@@ -76,9 +69,7 @@
     </div>
     <!-- End of Main Content -->
 
-    <!-- Footer -->
     <%- include('../../partials/footer.ejs') %>
-    <!-- End of Footer -->
 
   </div>
   <!-- End of Content Wrapper -->
@@ -92,7 +83,8 @@
 </a>
 
 <!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -110,14 +102,7 @@
   </div>
 </div>
 
-
-<!-- JavaScript file -->
-<!-- Bootstrap core JavaScript-->
-<!-- Core plugin JavaScript-->
-<!-- Custom scripts for all pages-->
 <%- include('../../partials/js.ejs') %>
-<!-- End of JavaScript file -->
-
 <script>
-  CKEDITOR.replace( 'about' );
+  CKEDITOR.replace('about');
 </script>
