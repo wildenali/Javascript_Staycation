@@ -445,6 +445,35 @@ module.exports = {
         }
     },
 
+    addActivity: async (req, res) => {
+        const { name, type, itemId } = req.body;
+    
+        try {
+            if (!req.file) {
+                req.flash('alertMessage', 'Image not found');
+                req.flash('alertStatus', 'danger');
+                res.redirect(`/admin/item/show-detail-item/${itemId}`);
+            }
+            const activity = await Activity.create({
+                name,
+                type,
+                itemId,
+                imageUrl: `images/${req.file.filename}`
+            });
+        
+            const item = await Item.findOne({ _id: itemId });
+            item.activityId.push({ _id: activity._id });
+            await item.save()
+            req.flash('alertMessage', 'Success Add Activity');
+            req.flash('alertStatus', 'success');
+            res.redirect(`/admin/item/show-detail-item/${itemId}`);
+        } catch (error) {
+            req.flash('alertMessage', `${error.message}`);
+            req.flash('alertStatus', 'danger');
+            res.redirect(`/admin/item/show-detail-item/${itemId}`);
+        }
+    },
+
     viewBooking: (req, res) => {
         res.render('admin/booking/view_booking', {
             title: "Staycation | Booking"
