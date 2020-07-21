@@ -346,18 +346,41 @@ module.exports = {
         try {
             const alertMessage = req.flash('alertMessage');
             const alertStatus = req.flash('alertStatus');
-            const alert = { message: alertMessage, status: alertStatus };
-        
-            const feature = await Feature.find({ itemId: itemId });
-            const activity = await Activity.find({ itemId: itemId });
-        
+            const alert = { message: alertMessage, status: alertStatus };    
+
             res.render('admin/item/detail_item/view_detail_item', {
                 title: 'Staycation | Detail Item',
                 alert,
-                itemId,
-                feature,
-                activity,
+                itemId
             });
+        } catch (error) {
+            req.flash('alertMessage', `${error.message}`);
+            req.flash('alertStatus', 'danger');
+            res.redirect(`/admin/item/show-detail-item/${itemId}`);
+        }
+    },
+
+    addFeature: async (req, res) => {
+        const { name, qty, itemId } = req.body;
+        try {
+            if (!req.file) {
+                req.flash('alertMessage', 'Image not found');
+                req.flash('alertStatus', 'danger');
+                res.redirect(`/admin/item/show-detail-item/${itemId}`);
+            }
+            const feature = await Feature.create({
+                name,
+                qty,
+                itemId,
+                imageUrl: `images/${req.file.filename}`
+            });
+        
+            const item = await Item.findOne({ _id: itemId });
+            item.featureId.push({ _id: feature._id });
+            await item.save()
+            req.flash('alertMessage', 'Success Add Feature');
+            req.flash('alertStatus', 'success');
+            res.redirect(`/admin/item/show-detail-item/${itemId}`);
         } catch (error) {
             req.flash('alertMessage', `${error.message}`);
             req.flash('alertStatus', 'danger');
