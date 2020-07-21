@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const { ObjectId } = mongoose.Schema;
 
-booking = new mongoose.Schema({
+const bookingSchema = new mongoose.Schema({
     bookingStartDate: {
         type: Data,
         required: true
