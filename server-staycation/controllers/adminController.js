@@ -18,14 +18,17 @@ module.exports = {
                 message: alertMessage,
                 status: alertStatus
             }
-            // console.log(category);
-            res.render('index', { 
-                alert,
-                title: "Staycation | Login"
-            });
+            if (req.session.user == null || req.session.user == undefined) {
+                res.render('index', {
+                  alert,
+                  title: "Staycation | Login"
+                });
+            } else {
+                res.redirect('/admin/dashboard');
+            }
         } catch (error) {
-            res.render('admin/signin');
-        }
+            res.redirect('/admin/signin');
+          }
     },
 
     actionSignin: async (req, res) => {
@@ -43,6 +46,12 @@ module.exports = {
                 req.flash('alertMessage', 'Password SALAH');
                 req.flash('alertStatus', 'danger');
                 res.redirect('/admin/signin');
+            }
+
+            // ada hubungannya sama auth.js
+            req.session.user = {
+                id: user.id,
+                username: user.username
             }
 
             // kalau user dan password bener
