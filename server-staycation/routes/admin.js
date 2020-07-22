@@ -2,6 +2,9 @@ const router = require('express').Router();
 const adminController = require('../controllers/adminController');
 const { uploadSingle, uploadMultiple } = require('../middlewares/multer');
 
+// endpoint signin
+router.get('/signin', adminController.viewSignin);
+
 router.get('/dashboard', adminController.viewDashboard);
 
 // endpoint category

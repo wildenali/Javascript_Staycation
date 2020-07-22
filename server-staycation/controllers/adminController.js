@@ -9,6 +9,24 @@ const path = require('path');
 
 
 module.exports = {
+    viewSignin: async (req, res) => {
+        try {
+            const alertMessage = req.flash('alertMessage');
+            const alertStatus = req.flash('alertStatus');
+            const alert = {
+                message: alertMessage,
+                status: alertStatus
+            }
+            // console.log(category);
+            res.render('index', { 
+                alert,
+                title: "Staycation | Login"
+            });
+        } catch (error) {
+            res.render('admin/signin');
+        }
+    },
+
     viewDashboard: (req, res) => {
         res.render('admin/dashboard/view_dashboard', {
             title: "Staycation | Dashboard"
