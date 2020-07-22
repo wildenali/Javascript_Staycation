@@ -15,7 +15,6 @@ module.exports = {
       const treasure = await Treasure.find();
       const city = await Item.find();
 
-
       res.status(200).json({
         hero: {
           traveler: traveler.length,
