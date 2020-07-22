@@ -4,6 +4,7 @@ const { uploadSingle, uploadMultiple } = require('../middlewares/multer');
 
 // endpoint signin
 router.get('/signin', adminController.viewSignin);
+router.post('/signin', adminController.actionSignin);
 
 router.get('/dashboard', adminController.viewDashboard);
 
