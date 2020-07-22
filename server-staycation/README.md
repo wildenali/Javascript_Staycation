@@ -41,3 +41,9 @@ untuk menggunakan method PUT. perlu install method-override
 ## 5. Install multer dan fs-extra
 
 `$ npm install multer fs-extra`
+
+## 5. Install bcrypt.js dan mongoose-seed
+bcrypt.js untuk password
+mongoose-seed untuk seeder
+
+`$ npm install bcryptjs`
