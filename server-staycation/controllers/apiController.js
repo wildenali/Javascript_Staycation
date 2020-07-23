@@ -1,6 +1,7 @@
 const Item = require('../models/Item');
 const Treasure = require('../models/Activity');
 const Traveler = require('../models/Booking');
+const Categori = require('../models/Category');
 
 module.exports = {
 
@@ -10,6 +11,8 @@ module.exports = {
         .select('_id title country city price unit imageId')
         .limit(5)
         .populate({ path: 'imageId', select: '_id imageUrl' })
+      
+      
 
       const traveler = await Traveler.find();
       const treasure = await Treasure.find();
