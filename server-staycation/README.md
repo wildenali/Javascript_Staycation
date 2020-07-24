@@ -42,8 +42,17 @@ untuk menggunakan method PUT. perlu install method-override
 
 `$ npm install multer fs-extra`
 
-## 5. Install bcrypt.js dan mongoose-seed
+## 6. Install bcrypt.js dan mongoose-seed
 bcrypt.js untuk password
 mongoose-seed untuk seeder
 
 `$ npm install bcryptjs`
+
+## 7. Install Mocha, Chai and Chai-http
+Ini pada saan Testing API with mocha, chai and chai-http
+
+`$ npm install mocha chai chai-http`
+
+dan install mocha untuk global
+
+`$ npm install -g mocha`
