@@ -13,7 +13,8 @@ const flash = require('connect-flash');
 
 // import mongoose
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/db_staycation', {
+// mongoose.connect('mongodb://127.0.0.1:27017/db_staycation', {
+mongoose.connect('mongodb+srv://wildenali:wildenalipassword@cluster0.y2esj.mongodb.net/db_staycation?retryWrites=true&w=majority', {
   useUnifiedTopology: true,
   useCreateIndex: true,
   useFindAndModify: false,
