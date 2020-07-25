@@ -93,3 +93,6 @@ ini untuk melengkapi react-date-range
 - https://class.buildwithangga.com/course_playing/full-stack-javascript-developer/184
 `npm i react-redux`
 `npm i axios`
+
+- Install redux react-redux redux-thunk axios
+`npm i redux react-redux redux-thunk axios`
